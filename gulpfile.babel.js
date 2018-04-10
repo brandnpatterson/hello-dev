@@ -9,21 +9,15 @@ import webpack from 'webpack-stream';
 
 // let localhost = 'hello-world.localhost';
 
-let paths = {
-    public: './public/',
-    js: './src/js/',
-    sass: './src/sass/'
-};
-
 gulp.task('eslint', () => {
-    return gulp.src([`${paths.js}**/*.js`, '!node_modules/**'])
+    return gulp.src(['./src/js/**/*.js', '!node_modules/**'])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
 
 gulp.task('stylelint', () => {
-    return gulp.src(`${paths.sass}**/*.scss`)
+    return gulp.src('./src/sass/**/*.scss')
         .pipe(styleLint({
             reporters: [
                 { formatter: 'string', console: true }
@@ -32,19 +26,19 @@ gulp.task('stylelint', () => {
 });
 
 gulp.task('scripts', ['eslint'], () => {
-    return gulp.src(`${paths.js}index.js`)
+    return gulp.src('./src/js/index.js')
         .pipe(webpack({ 
             devtool: 'source-map',
             output: { 
                 filename: 'bundle.js' 
             }
         }))
-        .pipe(gulp.dest(paths.public))
+        .pipe(gulp.dest('./public/'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('styles', ['stylelint'], () => {
-    return gulp.src(`${paths.sass}style.scss`)
+    return gulp.src('./src/sass/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ 
             outputStyle: 'compressed' 
@@ -54,14 +48,14 @@ gulp.task('styles', ['stylelint'], () => {
             cascade: false 
         }))
         .pipe(sourcemaps.write('/'))
-        .pipe(gulp.dest(paths.public))
+        .pipe(gulp.dest('./public/'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('watch', () => {
-    gulp.watch(`${paths.js}**/*.scss`, ['scripts']);
-    gulp.watch(`${paths.sass}**/*.scss`, ['styles']);
-    gulp.watch('index.html', browserSync.reload);
+    gulp.watch('./src/js/index.js', ['scripts']);
+    gulp.watch('./src/sass/**/*.scss', ['styles']);
+    gulp.watch('./index.html', browserSync.reload);
 });
 
 gulp.task('default', ['scripts', 'styles', 'watch'], () => {
