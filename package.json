@@ -28,5 +28,9 @@
     "webpack": "^4.0.0",
     "webpack-stream": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brandnpatterson/hello-world.git"
+  }
 }
