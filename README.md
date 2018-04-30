@@ -40,11 +40,9 @@ let localhost = 'hello-world.localhost';
 
 browserSync.init({
     server: {
+        // baseDir: './'
         proxy: localhost
-    },
-    // server: {
-    //     baseDir: './'
-    // }
+    }
 });
 ```
 
