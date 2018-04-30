@@ -39,7 +39,9 @@ To add a proxy to browser sync, first create the proxy on your local machine. Ne
 let localhost = 'hello-world.localhost';
 
 browserSync.init({
-    proxy: localhost,
+    server: {
+        proxy: localhost
+    },
     // server: {
     //     baseDir: './'
     // }
