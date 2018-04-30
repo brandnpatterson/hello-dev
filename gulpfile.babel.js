@@ -7,7 +7,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import styleLint from 'gulp-stylelint';
 import webpack from 'webpack-stream';
 
-// let localhost = 'hello-world.localhost';
+let localhost = 'hello-world.localhost';
 
 gulp.task('eslint', () => {
     return gulp.src(['./src/js/**/*.js', '!node_modules/**'])
@@ -60,9 +60,8 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['scripts', 'styles', 'watch'], () => {
     browserSync.init({
-        // proxy: localhost,
         server: {
-            baseDir: './'
+            proxy: localhost
         }
     });
 });
