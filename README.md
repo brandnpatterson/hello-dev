@@ -39,10 +39,11 @@ When adding new files, restart your server so that the new files will be watched
 let localhost = 'hello-world.localhost';
 
 browserSync.init({
-    server: {
-        // baseDir: './'
-        proxy: localhost
-    }
+    proxy: localhost,
+    // server: {
+    //     baseDir: './'
+    // }
+    
 });
 ```
 
