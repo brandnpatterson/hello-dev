@@ -1,13 +1,13 @@
-import gulp from 'gulp';
-import autoprefixer from 'gulp-autoprefixer';
-import browserSync from 'browser-sync';
-import eslint from 'gulp-eslint';
-import sass from 'gulp-sass';
-import sourcemaps from 'gulp-sourcemaps';
-import styleLint from 'gulp-stylelint';
-import webpack from 'webpack-stream';
+let gulp = require('gulp');
+let autoprefixer = require('gulp-autoprefixer');
+let browserSync = require('browser-sync').create();
+let eslint = require('gulp-eslint');
+let sass = require('gulp-sass');
+let sourcemaps = require('gulp-sourcemaps');
+let styleLint = require('gulp-stylelint');
+let webpack = require('webpack-stream');
 
-let localhost = 'hello-world.localhost';
+let localhost = 'hey-hey.localhost';
 
 gulp.task('eslint', () => {
     return gulp.src(['./src/js/**/*.js', '!node_modules/**'])
@@ -61,8 +61,8 @@ gulp.task('watch', () => {
 gulp.task('default', ['scripts', 'styles', 'watch'], () => {
     browserSync.init({
         server: {
-            baseDir: './'
-            // proxy: localhost
+            baseDir: './',
+            proxy: localhost
         }
     });
 });
