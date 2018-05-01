@@ -33,7 +33,7 @@ When adding new files, restart your server so that the new files will be watched
 
 ## Using a Proxy
 
-To add a proxy to browser sync, first create the proxy on your local machine. Next replace the `server` property with the `proxy` property and define your proxy.
+1. To add a proxy to browser sync, first create the proxy on your local machine. Next replace the `server` property with the `proxy` property and define your proxy.
 
 ```
 let localhost = 'hello-world.localhost';
@@ -44,6 +44,15 @@ browserSync.init({
         proxy: localhost
     }
 });
+```
+
+2. If using Apache, don't forget to add your new host to the hosts dir (likely /etc/hosts)
+```
+sudo nano hosts
+```
+Add
+```
+127.0.0.1 hello-world.localhost
 ```
 
 ## Built With
