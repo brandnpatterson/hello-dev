@@ -50,7 +50,6 @@ browserSync.init({
 ```
 sudo nano hosts
 ```
-Add
 ```
 127.0.0.1 hello-world.localhost
 ```
