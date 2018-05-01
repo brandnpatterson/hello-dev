@@ -48,7 +48,7 @@ browserSync.init({
 
 2. If using Apache, don't forget to add your new host to the hosts dir (likely /etc/hosts)
 ```
-sudo nano hosts
+sudo nano /etc/hosts
 ```
 ```
 127.0.0.1 hello-world.localhost
