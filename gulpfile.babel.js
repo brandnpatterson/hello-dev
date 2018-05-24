@@ -7,7 +7,7 @@ let sourcemaps = require('gulp-sourcemaps');
 let styleLint = require('gulp-stylelint');
 let webpack = require('webpack-stream');
 
-let localhost = 'hello-world.localhost';
+let localhost = 'hello-dev.localhost';
 
 gulp.task('eslint', () => {
     return gulp.src(['./src/js/**/*.js', '!node_modules/**'])

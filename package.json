@@ -1,13 +1,14 @@
 {
-  "name": "hello-world",
+  "name": "hello-dev",
   "version": "1.0.0",
-  "description": "hello-world",
+  "description": "hello-dev",
   "author": "Brandon Patterson",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf public",
+    "eslint": "eslint src/js/index.js",
     "start": "gulp",
-    "stylelint": "stylelint src/sass/**/*.scss",
-    "eslint": "eslint src/js/index.js"
+    "stylelint": "stylelint src/sass/**/*.scss"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -30,6 +31,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/brandnpatterson/hello-world.git"
+    "url": "https://github.com/brandnpatterson/hello-dev.git"
   }
 }

@@ -1,4 +1,4 @@
-# Hello World
+# Hello Dev
 
 Development environment that preprocesses styles, bundles scripts, watches for file changes, and uses live reload
 
@@ -7,7 +7,7 @@ Development environment that preprocesses styles, bundles scripts, watches for f
 Start by cloning this repo, then run
 
 ```
-cd hello-world
+cd hello-dev
 ```
 
 then run
@@ -22,7 +22,7 @@ And run gulp's default task
 gulp
 ```
 
-You will see 'Hello World' open at localhost:3000
+You will see 'Hello Dev' open at localhost:3000
 
 ## Live Reload
 
@@ -36,7 +36,7 @@ When adding new files, restart your server so that the new files will be watched
 1. To add a proxy to browser sync, first create the proxy on your local machine. Next replace the `server` property with the `proxy` property and define your proxy.
 
 ```
-let localhost = 'hello-world.localhost';
+let localhost = 'hello-dev.localhost';
 
 browserSync.init({
     proxy: localhost,
@@ -52,7 +52,7 @@ browserSync.init({
 sudo nano /etc/hosts
 ```
 ```
-127.0.0.1 hello-world.localhost
+127.0.0.1 hello-dev.localhost
 ```
 
 ## Built With
