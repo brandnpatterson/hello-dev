@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/js/index.js',
     output: {
         path: path.resolve(__dirname, './js/'),
-        filename: 'spinny-widget.js'
+        filename: 'bundle.js'
     },
     module: {
         rules: [
