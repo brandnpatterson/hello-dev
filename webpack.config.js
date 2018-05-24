@@ -1,11 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-    entry: './js/index.js',
+    devtool: 'source-map',
+    entry: './src/js/index.js',
     output: {
         path: path.resolve(__dirname, './js/'),
-        filename: 'bundle.js'
+        filename: 'spinny-widget.js'
     },
     module: {
         rules: [
@@ -17,5 +19,10 @@ module.exports = {
                 }]
             }
         ]
-    }
+    },
+    plugins: [
+        new UglifyJsPlugin({
+            sourceMap: true
+        })
+    ]
 };
